@@ -1,5 +1,10 @@
 package model;
 
+import exceptions.BeansAmountException;
+import exceptions.NotEnoughBeansException;
+import exceptions.TooManyBeansException;
+import exceptions.WaterException;
+
 /**
  * A coffee maker used to train baristas.
  *
@@ -33,10 +38,11 @@ public class CoffeeMaker {
     public void setTimeSinceLastBrew(int time) {
         // TODO: complete the implementation of this method
     }
-
-    //REQUIRES: beans between 2.40 and 2.60 cups, water > 14.75 cups
+    
     //EFFECTS: sets cups remaining to full (20 cups) and time since last brew to 0
-    public void brew(double beans, double water){
+    //         throws NotEnoughBeansException if beans less than 2.4, TooManyBeansException
+    //         if beans greater than 2.6 and WaterException if water less than or equal to 14.75
+    public void brew(double beans, double water) throws BeansAmountException, WaterException {
         // TODO: complete the implementation of this method
     }
 
