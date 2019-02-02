@@ -8,7 +8,12 @@ import model.pets.Dog;
 import model.pets.Parrot;
 import model.pets.Pet;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PetPairs {
+    private List<Pet> animals = new ArrayList<>();
+    private List<Human> people = new ArrayList<>();
 
     public PetPairs() {
         Cat cat = new Cat("calico", false, true, 55.00);

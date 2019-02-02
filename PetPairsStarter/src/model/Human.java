@@ -2,10 +2,14 @@ package model;
 
 import model.pets.Pet;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class Human {
     private String name;
     private double spendibees;
+    private List<Pet> pets = new ArrayList<>();
 
     public Human(String name) {
         this.name = name;
@@ -26,7 +30,7 @@ public class Human {
     //EFFECTS: if this can afford pet, adopt pet and have pet adopt human
     public void adoptPet(Pet pet){
         System.out.println("Adopting a pet!");
-        if (!this.equals(pet.getHuman())) {
+        if (!this.hasPet(pet)) {
             spendSpendibees(pet.getPrice());
             this.pets.add(pet);
             pet.adoptHuman(this);
@@ -61,8 +65,12 @@ public class Human {
 
     //EFFECTS: returns the number of pets belonging to species
     public int numPetsOfSpecies(String species) {
-        //TODO 6
-        return 0;
+        int counter = 0;
+        for(Pet pet : pets)
+            if (pet.getSpecies().equals(species))
+                counter++;
+
+        return counter;
     }
 
 }
